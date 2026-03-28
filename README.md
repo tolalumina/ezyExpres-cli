@@ -39,3 +39,19 @@ It provides **Artisan-style commands** to generate controllers, models, routes, 
 npx ezyEpress 
 ```
 
+##How to usage 
+
+# Generate a controller
+cex make:controller UserController
+
+# Generate a model
+cex make:model User
+
+# Generate a route
+cex make:route user
+
+# Generate middleware
+cex make:middleware auth
+
+# Generate service
+cex make:service UserService

@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "bin": {
+    "ezyexpres": "./index.js"
+  },
   "scripts": {
     "dev": "index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -13,6 +16,6 @@
   "type": "commonjs",
   "dependencies": {
     "commander": "^14.0.3",
-    "inquirer": "^13.3.2"
+    "inquirer": "^8.2.7"
   }
 }
