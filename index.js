@@ -163,6 +163,44 @@ function printResults(results) {
   console.log('-'.repeat(40));
 }
 
+/**
+ * Create a basic app.js file in the project root
+ */
+function createAppJs(basePath) {
+  const appJsContent = `const express = require('express');
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Middleware
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
+// Routes
+app.get('/', (req, res) => {
+  res.json({ message: 'Welcome to Express!' });
+});
+
+// Start server
+app.listen(port, () => {
+  console.log(\`Server running on port \${port}\`);
+});
+
+module.exports = app;
+`;
+
+  const appPath = path.join(basePath, 'app.js');
+  try {
+    if (!fs.existsSync(appPath)) {
+      fs.writeFileSync(appPath, appJsContent);
+      return { folder: 'app.js', status: 'created' };
+    } else {
+      return { folder: 'app.js', status: 'exists' };
+    }
+  } catch (error) {
+    return { folder: 'app.js', status: 'error', error: error.message };
+  }
+}
+
 /* ============================================================================
    CLI SETUP
    ============================================================================ */
@@ -192,6 +230,13 @@ program
 
     console.log(`\nCreating ${selectedStructure} structure in ${basePath}...`);
     const results = createFolders(basePath, folders);
+    
+    // Create app.js for express/api/mvc structures
+    if (['express', 'api', 'mvc'].includes(selectedStructure)) {
+      const appResult = createAppJs(basePath);
+      results.push(appResult);
+    }
+    
     printResults(results);
 
     const shouldInstall = options.install || (
