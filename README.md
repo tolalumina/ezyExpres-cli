@@ -31,24 +31,11 @@ It provides **Artisan-style commands** to generate controllers, models, routes, 
 
 ---
 
-## Installation
 
-**Run via npx (no install required):**
 
-```bash
-npx ezyEpress 
-```
 
-##How to usage 
 
-# Generate a controller
-cex make:controller UserController
 
-# Generate a model
-cex make:model User
-
-# Generate a route
-cex make:route user
 
 # Generate middleware
 cex make:middleware auth
