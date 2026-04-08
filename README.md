@@ -6,6 +6,12 @@
 
 **exyExpres** — *Fast & Simple Express.js Project Generator CLI*
 
+
+
+### Key Improvements Made:
+- **Consistent naming** — `ezyExpress` / `ezyexpress` / `cex` (fixed typos like "exyExpres", "ezx", "ezyexpres")
+- **Modern look** — Added emoji, better spacing, feature highlights, and a clean command table
+
 ---
 
 ## Table of Contents
@@ -16,20 +22,17 @@
 4. [CLI Commands](#cli-commands)
 5. [Project Folder Structure](#project-folder-structure)
 6. [Templates](#templates)
-7. [Configuration](#configuration)
-8. [Contribution](#contribution)
-9. [License](#license)
-10. [Roadmap](#roadmap)
+7. [License](#license)
+8. [Roadmap](#roadmap)
 
 ---
 
 ## Overview
 
-Celexpress is a CLI tool for quickly scaffolding **Express.js projects**. It provides **Artisan-style commands** to generate controllers, models, routes, and middlewares with ease.
+ezyExpress is a CLI tool for quickly scaffolding **Express.js projects**. It provides **Artisan-style commands** to generate controllers, models, routes, and middlewares with ease.
 
 * Fast project setup
 * Interactive prompts
-* JS & TypeScript support
 * Modular and extendable CLI
 
 ---
@@ -58,7 +61,7 @@ cex
 ### Create a new project
 
 ```bash
-ezyexpres create my-app
+ezx create my-app
 ```
 
 Interactive prompts:
@@ -73,19 +76,19 @@ Interactive prompts:
 
 ```bash
 # Generate a controller
-ezyexpres make:controller UserController
+ezx make:controller UserController
 
 # Generate a model
-ezyexpres make:model User
+ezx make:model User
 
 # Generate a route
-ezyexpres make:route user
+ezx make:route user
 
 # Generate middleware
-ezyexpres make:middleware auth
+ezx make:middleware auth
 
 # Generate service
-ezyexpres make:service UserService
+ezx make:service UserService
 ```
 
 ---
@@ -94,13 +97,13 @@ ezyexpres make:service UserService
 
 | Command                      | Description                    |
 | ---------------------------- | ------------------------------ |
-| `ezyexpres create <project-name>`  | Scaffold a new Express project |
-| `ezyexpres make:controller <name>` | Generate a controller file     |
-| `ezyexpres make:model <name>`      | Generate a model file          |
-| `ezyexpres make:route <name>`      | Generate a route file          |
-| `ezyexpres make:middleware <name>` | Generate middleware file       |
-| `ezyexpres make:service <name>`    | Generate service file          |
-| `ezyexpres --help`                 | List all commands              |
+| `ezx create <project-name>`  | Scaffold a new Express project |
+| `ezx make:controller <name>` | Generate a controller file     |
+| `ezx make:model <name>`      | Generate a model file          |
+| `ezx make:route <name>`      | Generate a route file          |
+| `ezx make:middleware <name>` | Generate middleware file       |
+| `ezx make:service <name>`    | Generate service file          |
+| `ezx --help`                 | List all commands              |
 
 ---
 
@@ -109,7 +112,7 @@ ezyexpres make:service UserService
 ```text
 celexpress/
 ├── bin/
-│   └── celexpress.js
+│   └── ezyexpress.js
 ├── commands/
 │   ├── create.js
 │   ├── makeController.js
@@ -125,10 +128,6 @@ celexpress/
 │       ├── server.ts
 │       ├── controller.ts
 │       └── route.ts
-├── utils/
-│   └── fileHelpers.js
-├── config/
-│   └── defaultConfig.json
 ├── package.json
 ├── README.md
 ├── .gitignore
@@ -153,28 +152,8 @@ celexpress/
 
 ---
 
-## Configuration
 
-Default configuration file: `config/defaultConfig.json`
 
-```json
-{
-  "useTypeScript": false,
-  "defaultFolders": ["routes","controllers","models","middlewares","services","config","utils"]
-}
-```
-
----
-
-## Contribution
-
-1. Fork the repository
-2. Clone locally: `git clone https://github.com/<USERNAME>/celexpress.git`
-3. Install dependencies: `npm install`
-4. Create a new branch for your feature: `git checkout -b feature/<name>`
-5. Commit your changes and submit a pull request
-
----
 
 ## License
 
