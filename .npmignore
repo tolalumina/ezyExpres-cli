@@ -1,0 +1,16 @@
+# Ignore source code (assuming you compile it)
+src/
+tests/
+
+# Ignore config files
+.eslintrc.json
+.prettierrc
+jest.config.js
+.babelrc
+
+# Ignore logs and local envs
+*.log
+.env
+
+# Ignore GitHub specific files
+.github/
